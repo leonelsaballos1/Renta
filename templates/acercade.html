@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block title %}Acerca de{% endblock %}
+{% block body %}
+
+<div class="container mt-5">
+  <h2 class="text-center mb-5 fw-bold">Acerca de Nosotros</h2>
+
+  <!-- Sección introductoria -->
+  <div class="row mb-5 align-items-center">
+    <div class="col-md-6">
+      <p class="fs-5">
+        En <strong>RentCar Plus</strong>, no solo alquilamos vehículos, sino que creamos experiencias de movilidad cómodas y seguras. 
+        Cada auto de nuestra flota es cuidadosamente revisado para garantizar calidad, seguridad y confort en cada viaje.
+      </p>
+      <p class="fs-5">
+        Nuestro objetivo es ofrecer soluciones de transporte confiables, modernas y flexibles, adaptadas a tus necesidades personales o profesionales.
+        Con nosotros, cada trayecto será tranquilo, seguro y memorable.
+      </p>
+    </div>
+    <div class="col-md-6">
+      <img src="{{ url_for('static', filename='img/1.2.png') }}" class="img-fluid rounded shadow" alt="Acerca de RentCar">
+    </div>
+  </div>
+
+  <!-- Misión -->
+  <div class="row mb-5 align-items-center">
+    <div class="col-md-6 order-md-2">
+      <h4 class="text-primary">Nuestra Misión</h4>
+      <p class="fs-5">
+        Brindar servicios de renta de vehículos con total seguridad y eficiencia, 
+        ofreciendo asesoría personalizada y opciones flexibles para que cada cliente disfrute de su experiencia de movilidad sin preocupaciones.
+      </p>
+    </div>
+    <div class="col-md-6 order-md-1">
+      <img src="{{ url_for('static', filename='img/img1.png') }}" class="img-fluid rounded shadow" alt="Misión RentCar">
+    </div>
+  </div>
+
+  <!-- Visión -->
+  <div class="row mb-5 align-items-center">
+    <div class="col-md-6">
+      <h4 class="text-success">Nuestra Visión</h4>
+      <p class="fs-5">
+        Ser la empresa líder en renta de vehículos, reconocida por su confiabilidad, innovación y atención excepcional, 
+        creando una comunidad de clientes que confíen en nosotros para cada viaje, personal o profesional.
+      </p>
+    </div>
+    <div class="col-md-6">
+      <img src="{{ url_for('static', filename='img/img2.png') }}" class="img-fluid rounded shadow" alt="Visión RentCar">
+    </div>
+  </div>
+
+  <!-- Valores -->
+  <div class="row mb-5">
+    <h4 class="text-center mb-4 text-warning">Nuestros Valores</h4>
+    <div class="col-md-4 text-center mb-3">
+      <i class="bi bi-shield-lock fs-1 text-primary"></i>
+      <h5 class="mt-2">Seguridad</h5>
+      <p>Mantenemos todos los vehículos asegurados y revisados para tu tranquilidad.</p>
+    </div>
+    <div class="col-md-4 text-center mb-3">
+      <i class="bi bi-speedometer2 fs-1 text-success"></i>
+      <h5 class="mt-2">Eficiencia</h5>
+      <p>Procesos rápidos de reserva y entrega para que tu viaje comience sin demoras.</p>
+    </div>
+    <div class="col-md-4 text-center mb-3">
+      <i class="bi bi-people fs-1 text-danger"></i>
+      <h5 class="mt-2">Compromiso</h5>
+      <p>Atención personalizada y soporte durante todo tu período de alquiler.</p>
+    </div>
+  </div>
+
+  <!-- Cierre inspirador -->
+  <div class="row mb-5 align-items-center">
+    <div class="col-md-6">
+      <p class="fs-5 fst-italic">
+        En <strong>RentCar Plus</strong>, creemos que cada viaje merece ser cómodo, seguro y memorable. 
+        Confía en nosotros para tu próximo recorrido y descubre cómo la movilidad puede ser simple, flexible y sin preocupaciones.
+      </p>
+    </div>
+    <div class="col-md-6">
+      <img src="{{ url_for('static', filename='img/img9.png') }}" class="img-fluid rounded shadow" alt="Inspiración RentCar">
+    </div>
+  </div>
+</div>
+
+{% endblock %}

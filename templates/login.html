@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+{% block body %}
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10 shadow-lg rounded-4" style="background-color: #d6ede2;">
+      <div class="row g-0">
+        
+        <!-- Lado Izquierdo -->
+        <div class="col-md-6 d-flex flex-column align-items-center justify-content-center text-white p-4 rounded-start-4" 
+             style="background-color: #1a6ff0;">
+          <img src="{{ url_for('static', filename='img/images.jpeg') }}" 
+               alt="icono" 
+               class="mb-3 img-fluid" 
+               style="max-width:220px;">
+          <h3 class="fw-bold">¡Bienvenido Nuevamente!</h3>
+          <p class="text-white-50 text-center">Si aún no tienes una cuenta por favor regístrate aquí</p>
+          <a href="{{ url_for('registro') }}" class="btn btn-success mt-2 px-4">Registrarse</a>
+        </div>
+        
+        <!-- Lado Derecho -->
+        <div class="col-md-6 p-4 rounded-end-4">
+          <h3 class="fw-bold text-center mb-4">Iniciar Sesión</h3>
+          
+          <!-- Botón Google -->
+          <button class="btn w-100 mb-3 d-flex align-items-center justify-content-center rounded-3" 
+                  style="background-color: #fff; border: 1px solid #ccc;">
+            <img src="https://img.icons8.com/color/20/000000/google-logo.png" class="me-2"/>
+            Iniciar sesión con Google
+          </button>
+          
+          <p class="text-center small text-muted mb-3">o Iniciar Sesión con una cuenta</p>
+          
+          <!-- Formulario -->
+          <form method="POST">
+            <div class="mb-3">
+              <input type="email" 
+                     name="email" 
+                     class="form-control rounded-3" 
+                     placeholder="Correo electrónico" 
+                     required 
+                     autocomplete="email">
+            </div>
+            <div class="mb-3">
+              <input type="password" 
+                     name="password" 
+                     class="form-control rounded-3" 
+                     placeholder="Password" 
+                     required 
+                     autocomplete="current-password">
+            </div>
+            <button type="submit" 
+                    class="btn w-100 text-white rounded-3 py-2" 
+                    style="background-color: #1a6ff0;">
+              Iniciar Sesión
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

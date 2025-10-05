@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block title %}Contactos{% endblock %}
+{% block body %}
+
+<div class="container mt-5">
+  <h2 class="text-center mb-5 fw-bold text-primary">Contáctanos</h2>
+
+  <div class="row g-5 align-items-center">
+
+    <!-- Formulario -->
+    <div class="col-lg-6">
+      <div class="card shadow-lg p-5 rounded-4 border-0">
+        <h4 class="mb-4 text-center">Envíanos un mensaje</h4>
+        <form method="POST" action="#">
+          <div class="mb-3">
+            <label class="form-label fw-semibold"><i class="bi bi-person-fill me-2"></i>Nombre completo</label>
+            <input type="text" class="form-control form-control-lg rounded-3" placeholder="Tu nombre completo" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold"><i class="bi bi-envelope-fill me-2"></i>Correo electrónico</label>
+            <input type="email" class="form-control form-control-lg rounded-3" placeholder="ejemplo@correo.com" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold"><i class="bi bi-telephone-fill me-2"></i>Teléfono (opcional)</label>
+            <input type="tel" class="form-control form-control-lg rounded-3" placeholder="+505 8XXXXXXX">
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label fw-semibold"><i class="bi bi-chat-left-text-fill me-2"></i>Mensaje</label>
+            <textarea class="form-control form-control-lg rounded-3" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg w-100 shadow-sm">
+            <i class="bi bi-send-fill me-2"></i>Enviar mensaje
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Información de contacto y mapa -->
+    <div class="col-lg-6">
+      <div class="p-4 rounded-4 shadow-lg bg-light h-100 d-flex flex-column justify-content-between">
+        <div>
+          <h4 class="text-center mb-4">Nuestra Información</h4>
+
+          <p class="mb-3"><i class="bi bi-geo-alt-fill me-2"></i><strong>Dirección:</strong> Juigalpa, Chontales, Nicaragua</p>
+          <p class="mb-3"><i class="bi bi-envelope-fill me-2"></i><strong>Email:</strong> contacto@autoventas.com</p>
+          <p class="mb-3"><i class="bi bi-telephone-fill me-2"></i><strong>Teléfono:</strong> +505 8234 5678</p>
+
+          <!-- Redes Sociales Mejoradas -->
+          <h5 class="mt-4 mb-3 text-center fw-bold text-secondary">Síguenos en redes</h5>
+          <div class="d-flex justify-content-center gap-3 mb-4">
+            <a href="#" class="btn btn-outline-primary rounded-circle p-3 shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook">
+              <i class="bi bi-facebook fs-4"></i>
+            </a>
+            <a href="#" class="btn btn-outline-danger rounded-circle p-3 shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram">
+              <i class="bi bi-instagram fs-4"></i>
+            </a>
+            <a href="#" class="btn btn-outline-info rounded-circle p-3 shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter">
+              <i class="bi bi-twitter fs-4"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Mapa integrado -->
+        <div class="mt-3">
+          <iframe 
+            class="w-100 rounded-3 shadow-sm" 
+            height="300" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.765732544088!2d-85.45279848459821!3d12.10896869135284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f7345f45a0a1c9d%3A0x96b0b7b4dbf8c3a!2sJuigalpa%2C%20Chontales%2C%20Nicaragua!5e0!3m2!1ses!2sni!4v1693530000000!5m2!1ses!2sni" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Script para inicializar tooltips -->
+<script>
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+
+{% endblock %}

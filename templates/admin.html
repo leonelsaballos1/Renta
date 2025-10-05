@@ -1,0 +1,76 @@
+{% extends 'badmin.htm' %}
+{% block title %} Panel de Administrador - Renta de Carros {% endblock %}
+
+{% block body %}
+<div class="container p-5 mt-3">
+  <h2 class="text-center alert alert-primary py-4">
+    Sistema de Gestión de Renta de Carros
+  </h2>
+
+  <div class="row text-center">
+
+  <!-- PERFIL DEL USUARIO -->
+<div class="col-sm-4 mb-3">
+  <div class="card shadow-lg border-0" style="background: linear-gradient(180deg, #355e3b, #7a9f7a, #f1eeda);">
+    <div class="row g-0">
+      <div class="col-md-8">
+        <div class="card-body text-white">
+          <h5 class="card-title">Perfil del Administrador</h5>
+          <p class="card-text">Gestione su información personal.</p>
+          <!-- ✅ Botón celeste -->
+       <a href="#" class="btn btn-info btn-sm text-white">Ver Detalles</a>
+
+        </div>
+      </div>
+      <div class="col-md-4 align-content-center">
+        <img src="{{ url_for('static', filename='img/iconos/1.png') }}"
+             class="img-fluid rounded-start" alt="Usuario">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REGISTRAR VEHÍCULOS -->
+<div class="col-sm-4 mb-3">
+  <div class="card shadow-lg border-0" style="background: linear-gradient(180deg, #042bf1,#367cd9,#ffffff);">
+    <div class="row g-0">
+      <div class="col-md-8">
+        <div class="card-body text-white">
+          <h5 class="card-title">Registrar Vehículos</h5>
+          <p class="card-text">Agregue nuevos autos disponibles para renta.</p>
+          <!-- ✅ Botón celeste -->
+          <a href="#" class="btn btn-info btn-sm text-white">Ver Detalles</a>
+
+        </div>
+      </div>
+      <div class="col-md-4 align-content-center">
+        <img src="{{ url_for('static', filename='img/iconos/3.png') }}"
+             class="img-fluid rounded-start" alt="Registrar Vehículo">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LISTAR VEHÍCULOS -->
+<div class="col-sm-4 mb-3">
+  <div class="card shadow-lg border-0" style="background: linear-gradient(180deg, #0b235c,#3d85a9,#e0f7ff);">
+    <div class="row g-0">
+      <div class="col-md-8">
+        <div class="card-body text-white">
+          <h5 class="card-title">Visualizar Vehículos</h5>
+          <p class="card-text">Consulte el inventario de autos en renta.</p>
+          <!-- ✅ Botón celeste -->
+          <a href="#" class="btn btn-info btn-sm text-white">Ver Detalles</a>
+
+        </div>
+      </div>
+      <div class="col-md-4 align-content-center">
+        <img src="{{ url_for('static', filename='img/iconos/2.png') }}"
+             class="img-fluid rounded-start" alt="Visualizar Vehículos">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

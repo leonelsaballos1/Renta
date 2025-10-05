@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% block title %}Inicio{% endblock %}
+{% block body %}
+
+<!-- CAROUSEL -->
+<div id="carouselExampleIndicators" 
+     class="carousel slide" 
+     data-bs-ride="carousel" 
+     data-bs-interval="3000">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" 
+            class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" 
+            aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" 
+            aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{ url_for('static', filename='img/img5.png') }}" class="d-block w-100" alt="Imagen 1 - Renta de autos">
+    </div>
+    <div class="carousel-item">
+      <img src="{{ url_for('static', filename='img/1.2.png') }}" class="d-block w-100" alt="Imagen 2 - Renta de autos">
+    </div>
+    <div class="carousel-item">
+      <img src="{{ url_for('static', filename='img/1.3.png') }}" class="d-block w-100" alt="Imagen 3 - Renta de autos">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
+
+<!-- INFORMACIÓN -->
+<div class="container mt-5">
+  <h2 class="text-center mb-4">¿Por qué elegirnos?</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">Renta Segura</h5>
+          <p class="card-text">
+            Todos nuestros vehículos cuentan con seguro, asistencia 24/7 y 
+            mantenimiento preventivo para tu tranquilidad.
+          </p>
+          <p class="card-text">
+            Queremos que viajes con confianza y sin preocupaciones.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">Amplia Flota</h5>
+          <p class="card-text">
+            Sedanes, camionetas y vans para cada ocasión: vacaciones, 
+            trabajo, eventos o viajes familiares.
+          </p>
+          <p class="card-text">
+            Elige el vehículo que se ajuste a tus necesidades.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">Planes Flexibles</h5>
+          <p class="card-text">
+            Tarifas diarias, semanales o mensuales con descuentos especiales 
+            en reservas anticipadas.
+          </p>
+          <p class="card-text">
+            Además, puedes recoger tu auto en diferentes puntos de la ciudad.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Nuestros Servicios</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100 text-center">
+        <img src="{{ url_for('static', filename='img/1.1.png') }}" 
+             class="card-img-top img-fluid" 
+             alt="Renta de Autos" 
+             style="height:200px; object-fit:cover; border-radius:15px;">
+        <div class="card-body">
+          <h5 class="card-title">Renta de Autos</h5>
+          <p class="card-text">
+            Vehículos en excelente estado, listos para tus viajes urbanos y de carretera.
+          </p>
+          <a href="#" class="btn btn-primary">Reservar ahora</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100 text-center">
+        <img src="{{ url_for('static', filename='img/img3.png') }}" 
+             class="card-img-top img-fluid" 
+             alt="Accesorios y Extras" 
+             style="height:200px; object-fit:cover; border-radius:15px;">
+        <div class="card-body">
+          <h5 class="card-title">Accesorios y Extras</h5>
+          <p class="card-text">
+            GPS, sillas para niños, wifi portátil y más para hacer tu viaje más cómodo.
+          </p>
+          <a href="#" class="btn btn-primary">Agregar a mi reserva</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100 text-center">
+        <img src="{{ url_for('static', filename='img/img4.png') }}" 
+             class="card-img-top img-fluid" 
+             alt="Entrega y Recogida" 
+             style="height:200px; object-fit:cover; border-radius:15px;">
+        <div class="card-body">
+          <h5 class="card-title">Entrega y Recogida</h5>
+          <p class="card-text">
+            Te entregamos el auto en el aeropuerto, hotel o en tu domicilio sin costo adicional.
+          </p>
+          <a href="#" class="btn btn-primary">Solicitar servicio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white mt-5 p-4 text-center">
+  <div class="row">
+    <div class="col-md-4">
+      <h5>APP RENT CAR</h5>
+      <p>Soporte 24/7<br>Atención personalizada</p>
+    </div>
+    <div class="col-md-4">
+      <h5>Reservas</h5>
+      <p>Tarifas<br>Promociones<br>Descuentos</p>
+    </div>
+    <div class="col-md-4">
+      <h5>Contacto</h5>
+      <p>Facebook<br>Instagram<br>WhatsApp</p>
+    </div>
+  </div>
+  <p class="mt-3">© Copyright - All rights reserved 2025</p>
+</footer>
+
+{% endblock %}

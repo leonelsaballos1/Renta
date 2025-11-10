@@ -5,6 +5,7 @@
   <div class="row justify-content-center">
     <div class="col-md-10 shadow p-4 rounded" style="background-color: #d6ede2;">
       <div class="row">
+        
         <!-- Lado Izquierdo -->
         <div class="col-md-6 d-flex flex-column align-items-center justify-content-center text-white p-4" 
              style="background-color: #1a6ff0; border-radius: 15px;">
@@ -20,28 +21,91 @@
         <!-- Lado Derecho -->
         <div class="col-md-6 p-4">
           <h3 class="fw-bold text-center mb-3">Bienvenidos</h3>
-          <button class="btn w-100 mb-2" style="background-color: white; border: 1px solid #ccc;">
+          
+          <!-- Botón Google -->
+          <button class="btn w-100 mb-2 d-flex align-items-center justify-content-center rounded-3" 
+                  style="background-color: white; border: 1px solid #ccc;">
             <img src="https://img.icons8.com/color/20/000000/google-logo.png" class="me-2"/>
             Iniciar sesión con Google
           </button>
+
           <p class="text-center small text-muted">o Usar tu email para registrarse</p>
           
+          <!-- Formulario -->
           <form method="POST">
+
+            <!-- Campo Nombre completo -->
             <div class="mb-3">
-              <input type="text" name="fullname" class="form-control" placeholder="Nombre completo" required>
+              <input 
+                type="text" 
+                name="fullname" 
+                id="fullname"
+                class="form-control form-control-lg bg-light fs-6 mi-input rounded-3"
+                placeholder="Nombre completo"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Ingrese su nombre completo"
+                required
+                autocomplete="name"
+              >
+             
             </div>
+
+            <!-- Campo Correo -->
             <div class="mb-3">
-              <input type="email" name="email" class="form-control" placeholder="Correo electrónico" required>
+              <input 
+                type="email" 
+                name="email" 
+                id="email"
+                class="form-control form-control-lg bg-light fs-6 mi-input rounded-3"
+                placeholder="Correo electrónico"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Ingrese su correo electrónico"
+                required
+                autocomplete="email"
+              >
+             
             </div>
+
+            <!-- Campo Contraseña -->
             <div class="mb-3">
-              <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
+              <input 
+                type="password" 
+                name="password" 
+                id="password"
+                class="form-control form-control-lg bg-light fs-6 mi-input rounded-3"
+                placeholder="Contraseña"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Cree una contraseña segura"
+                required
+                autocomplete="new-password"
+              >
+              
             </div>
-            <button type="submit" class="btn w-100 text-white" 
-                    style="background-color: #1a6ff0; border-radius: 10px;">Registrarse</button>
+
+            <!-- Botón Enviar -->
+            <button type="submit" 
+                    class="btn w-100 text-white rounded-3 py-2" 
+                    style="background-color: #1a6ff0;">
+              Registrarse
+            </button>
+
           </form>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Script para activar tooltips -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  });
+</script>
 {% endblock %}

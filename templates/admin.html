@@ -9,68 +9,60 @@
 
   <div class="row text-center">
 
-  <!-- PERFIL DEL USUARIO -->
-<div class="col-sm-4 mb-3">
-  <div class="card shadow-lg border-0" style="background: linear-gradient(180deg, #355e3b, #7a9f7a, #f1eeda);">
-    <div class="row g-0">
-      <div class="col-md-8">
-        <div class="card-body text-white">
-          <h5 class="card-title">Perfil del Administrador</h5>
-          <p class="card-text">Gestione su información personal.</p>
-          <!-- ✅ Botón celeste -->
-       <a href="#" class="btn btn-info btn-sm text-white">Ver Detalles</a>
-
+    <!-- PERFIL DEL USUARIO -->
+    <div class="col-sm-4 mb-3">
+      <div class="card shadow-lg border-0" style="background: linear-gradient(180deg, #355e3b, #7a9f7a, #f1eeda);">
+        <div class="row g-0 align-items-center">
+          <div class="col-md-8">
+            <div class="card-body text-white">
+              <h5 class="card-title mb-3">Perfil del Administrador</h5>
+              <h2 class="fw-bold text-light mb-3" style="font-size: 2.5rem;">{{ total_usuarios }}</h2>
+              <a href="{{ url_for('listar') }}" class="btn btn-light btn-sm text-dark fw-bold">Ver Detalles</a>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <img src="{{ url_for('static', filename='img/iconos/1.png') }}" class="img-fluid rounded-start" alt="Usuario">
+          </div>
         </div>
       </div>
-      <div class="col-md-4 align-content-center">
-        <img src="{{ url_for('static', filename='img/iconos/1.png') }}"
-             class="img-fluid rounded-start" alt="Usuario">
-      </div>
     </div>
-  </div>
-</div>
 
-<!-- REGISTRAR VEHÍCULOS -->
-<div class="col-sm-4 mb-3">
-  <div class="card shadow-lg border-0" style="background: linear-gradient(180deg, #042bf1,#367cd9,#ffffff);">
-    <div class="row g-0">
-      <div class="col-md-8">
-        <div class="card-body text-white">
-          <h5 class="card-title">Registrar Vehículos</h5>
-          <p class="card-text">Agregue nuevos autos disponibles para renta.</p>
-          <!-- ✅ Botón celeste -->
-          <a href="#" class="btn btn-info btn-sm text-white">Ver Detalles</a>
-
+    <!-- REGISTRAR VEHÍCULOS -->
+    <div class="col-sm-4 mb-3">
+      <div class="card shadow-lg border-0" style="background: linear-gradient(180deg, #042bf1,#367cd9,#ffffff);">
+        <div class="row g-0 align-items-center">
+          <div class="col-md-8">
+            <div class="card-body text-white">
+              <h5 class="card-title mb-3">Registrar Vehículos</h5>
+              <h2 class="fw-bold text-light mb-3" style="font-size: 2.5rem;">{{ total_vehiculos }}</h2>
+              <a href="{{ url_for('listar_productos_agregados') }}" class="btn btn-light btn-sm text-dark fw-bold">Ver Detalles</a>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <img src="{{ url_for('static', filename='img/iconos/3.png') }}" class="img-fluid rounded-start" alt="Registrar Vehículo">
+          </div>
         </div>
       </div>
-      <div class="col-md-4 align-content-center">
-        <img src="{{ url_for('static', filename='img/iconos/3.png') }}"
-             class="img-fluid rounded-start" alt="Registrar Vehículo">
-      </div>
     </div>
-  </div>
-</div>
 
-<!-- LISTAR VEHÍCULOS -->
-<div class="col-sm-4 mb-3">
-  <div class="card shadow-lg border-0" style="background: linear-gradient(180deg, #0b235c,#3d85a9,#e0f7ff);">
-    <div class="row g-0">
-      <div class="col-md-8">
-        <div class="card-body text-white">
-          <h5 class="card-title">Visualizar Vehículos</h5>
-          <p class="card-text">Consulte el inventario de autos en renta.</p>
-          <!-- ✅ Botón celeste -->
-          <a href="#" class="btn btn-info btn-sm text-white">Ver Detalles</a>
-
+    <!-- LISTAR VEHÍCULOS -->
+    <div class="col-sm-4 mb-3">
+      <div class="card shadow-lg border-0" style="background: linear-gradient(180deg, #0b235c,#3d85a9,#e0f7ff);">
+        <div class="row g-0 align-items-center">
+          <div class="col-md-8">
+            <div class="card-body text-white">
+              <h5 class="card-title mb-3">Visualizar Vehículos</h5>
+              <h2 class="fw-bold text-light mb-3" style="font-size: 2.5rem;">{{ total_vehiculos }}</h2>
+              <a href="{{ url_for('listar_productos') }}" class="btn btn-light btn-sm text-dark fw-bold">Ver Detalles</a>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <img src="{{ url_for('static', filename='img/iconos/2.png') }}" class="img-fluid rounded-start" alt="Visualizar Vehículos">
+          </div>
         </div>
       </div>
-      <div class="col-md-4 align-content-center">
-        <img src="{{ url_for('static', filename='img/iconos/2.png') }}"
-             class="img-fluid rounded-start" alt="Visualizar Vehículos">
-      </div>
     </div>
+
   </div>
 </div>
-
-
 {% endblock %}

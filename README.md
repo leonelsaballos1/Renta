@@ -34,3 +34,10 @@ MySql
 
 
 ## Vistas principal 
+![alt text] (1.png)
+
+## Vista de accesos
+![alt text] (2.png)
+
+## Vista dashboard (panel)
+![alt text] (3.png)

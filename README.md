@@ -19,7 +19,6 @@ flask
 Gestor de base de datos:
 MySql 
 
-
 ## Vistas principal 
 ![alt text] (1.png)
 

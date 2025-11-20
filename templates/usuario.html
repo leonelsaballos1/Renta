@@ -3,92 +3,264 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Panel de Usuario</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light">
+  <title>Panel de Leonel Felipe Corrales Saballos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <style>
+    :root {
+      --celeste-suave: #E6F7FF;
+      --celeste-vivo: #7DD3FC;
+      --azul-pro: #2563EB;
+      --azul-oscuro: #0A2540;
+      --blanco: #FFFFFF;
+    }
+
+    body {
+      background: radial-gradient(circle at top, var(--celeste-suave), var(--blanco) 70%);
+      font-family: 'Poppins', sans-serif;
+      color: var(--azul-oscuro);
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* ✨ EFECTO DE PARTÍCULAS */
+    .particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0; left: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      width: 8px; height: 8px;
+      background: var(--celeste-vivo);
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: float 15s linear infinite;
+    }
+
+    @keyframes float {
+      from { transform: translateY(100vh); opacity: 0.2; }
+      to { transform: translateY(-10vh); opacity: 1; }
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background: linear-gradient(90deg, var(--celeste-vivo), var(--azul-pro));
+      box-shadow: 0 0 20px rgba(0, 119, 182, 0.3);
+      position: relative;
+      z-index: 10;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--blanco) !important;
+      text-shadow: 0 0 10px var(--celeste-vivo);
+    }
+
+    .nav-link {
+      color: var(--blanco) !important;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: var(--celeste-suave) !important;
+      text-shadow: 0 0 10px var(--blanco);
+    }
+
+    /* PERFIL */
+    .profile-header {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 3rem auto 1rem;
+      box-shadow: 0 0 25px rgba(125, 211, 252, 0.4);
+      text-align: center;
+      max-width: 800px;
+      position: relative;
+      z-index: 2;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .avatar {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 4px solid var(--celeste-vivo);
+      box-shadow: 0 0 20px rgba(125, 211, 252, 0.8);
+      object-fit: cover;
+    }
+
+    .name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--azul-pro);
+      text-shadow: 0 0 10px var(--celeste-suave);
+    }
+
+    .role {
+      font-weight: 600;
+      color: var(--azul-oscuro);
+    }
+
+    /* TARJETAS */
+    .card {
+      border: none;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 8px 20px rgba(0, 119, 182, 0.2);
+      transition: 0.3s;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 30px rgba(125, 211, 252, 0.5);
+    }
+
+    .card i {
+      font-size: 2.2rem;
+      color: var(--azul-pro);
+      text-shadow: 0 0 8px var(--celeste-vivo);
+    }
+
+    /* BOTONES */
+    .btn-primary {
+      background: linear-gradient(90deg, var(--celeste-vivo), var(--azul-pro));
+      border: none;
+      color: var(--blanco);
+      font-weight: 600;
+      border-radius: 30px;
+      box-shadow: 0 0 10px rgba(125, 211, 252, 0.6);
+      transition: 0.3s;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(37, 99, 235, 0.8);
+    }
+
+    .btn-danger {
+      border-radius: 30px;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+    }
+
+    /* FOOTER */
+    footer {
+      background: linear-gradient(90deg, var(--celeste-vivo), var(--azul-pro));
+      color: var(--blanco);
+      padding: 1rem 0;
+      text-shadow: 0 0 10px var(--blanco);
+      margin-top: 3rem;
+    }
+
+    /* ANIMACIONES */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ✨ Partículas -->
+  <div class="particles">
+    <div class="particle" style="left:5%; animation-delay:0s;"></div>
+    <div class="particle" style="left:25%; animation-delay:3s;"></div>
+    <div class="particle" style="left:50%; animation-delay:6s;"></div>
+    <div class="particle" style="left:75%; animation-delay:1s;"></div>
+    <div class="particle" style="left:90%; animation-delay:5s;"></div>
+  </div>
+
+  <!-- 🔹 NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand fw-bold" href="#">Usuario Panel</a>
+      <a class="navbar-brand" href="#"><i class="bi bi-lightning-charge"></i> Leonel Panel</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="menu">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('logout') }}">Cerrar Sesión</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-person-circle"></i> Perfil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-gear"></i> Configuración</a></li>
+          <li class="nav-item"><a class="nav-link text-danger fw-bold" href="{{ url_for('logout') }}"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- CONTENIDO -->
-  <div class="container mt-5 text-center">
-    <h1 class="fw-bold">Bienvenido, Usuario 👋</h1>
-    <p class="text-muted">Desde aquí puedes ver tu información y realizar acciones.</p>
+  <!-- 👤 PERFIL -->
+  <section class="profile-header text-center">
+    <img src="https://i.imgur.com/fZ6a3fj.png" alt="Leonel" class="avatar">
+    <h2 class="name">Leonel Felipe Corrales Saballos</h2>
+    <p class="role">💼 Administrador Principal | Desarrollador Full Stack</p>
+  </section>
 
-    <div class="row mt-4 g-4 justify-content-center">
+  <!-- 💎 TARJETAS -->
+  <div class="container mt-4">
+    <div class="row g-4 justify-content-center">
 
-      <!-- PERFIL -->
       <div class="col-md-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">👤 Mi Perfil</h5>
-            <p class="card-text">Ver y actualizar tu información personal.</p>
-            <button class="btn btn-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#perfil">Detalles</button>
-            <div class="collapse mt-3" id="perfil">
-              <ul class="list-unstyled">
-                <li><strong>Nombre:</strong> Juan Pérez</li>
-                <li><strong>Email:</strong> juan@example.com</li>
-                <li><strong>Rol:</strong> Usuario Registrado</li>
-                <li><a href="#" class="btn btn-outline-secondary btn-sm mt-2">Editar Perfil</a></li>
-              </ul>
-            </div>
+        <div class="card p-4 text-center">
+          <i class="bi bi-person-lines-fill mb-3"></i>
+          <h5 class="card-title">Mi Perfil</h5>
+          <p class="card-text">Consulta y edita tus datos personales y credenciales.</p>
+          <button class="btn btn-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#perfil">Ver Detalles</button>
+          <div class="collapse mt-3" id="perfil">
+            <ul class="list-unstyled text-start">
+              <li><strong>Nombre:</strong> Leonel Felipe Corrales Saballos</li>
+              <li><strong>Email:</strong> leonel@agrolink.com</li>
+              <li><strong>Rol:</strong> Administrador</li>
+              <li><a href="#" class="btn btn-outline-primary btn-sm mt-2">Editar Perfil</a></li>
+            </ul>
           </div>
         </div>
       </div>
 
-      <!-- ACTIVIDADES -->
       <div class="col-md-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">📌 Mis Actividades</h5>
-            <p class="card-text">Revisa tu historial y tareas recientes.</p>
-            <button class="btn btn-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#actividades">Detalles</button>
-            <div class="collapse mt-3" id="actividades">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">✅ Actualizar perfil</li>
-                <li class="list-group-item">📩 Leer notificaciones</li>
-                <li class="list-group-item">📂 Descargar documentos</li>
-              </ul>
-              <a href="#" class="btn btn-outline-secondary btn-sm mt-3">Ver Todo</a>
-            </div>
+        <div class="card p-4 text-center">
+          <i class="bi bi-activity mb-3"></i>
+          <h5 class="card-title">Actividad Reciente</h5>
+          <p class="card-text">Últimas acciones realizadas dentro del sistema.</p>
+          <button class="btn btn-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#actividades">Ver Detalles</button>
+          <div class="collapse mt-3" id="actividades">
+            <ul class="list-group list-group-flush text-start">
+              <li class="list-group-item">✅ Actualizó el sistema</li>
+              <li class="list-group-item">📊 Consultó estadísticas</li>
+              <li class="list-group-item">💬 Interactuó con el asistente AI</li>
+            </ul>
+            <a href="#" class="btn btn-outline-primary btn-sm mt-3">Ver Todo</a>
           </div>
         </div>
       </div>
 
-      <!-- SEGURIDAD -->
       <div class="col-md-4">
-        <div class="card h-100 border-danger">
-          <div class="card-body">
-            <h5 class="card-title text-danger">🚪 Cerrar Sesión</h5>
-            <p class="card-text">Salir de tu cuenta de forma segura.</p>
-            <a href="{{ url_for('logout') }}" class="btn btn-danger">Cerrar Sesión</a>
-          </div>
+        <div class="card p-4 text-center">
+          <i class="bi bi-shield-lock-fill mb-3 text-danger"></i>
+          <h5 class="card-title text-danger">Seguridad</h5>
+          <p class="card-text">Cierra tu sesión de forma segura.</p>
+          <a href="{{ url_for('logout') }}" class="btn btn-danger">Cerrar Sesión</a>
         </div>
       </div>
 
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <footer class="bg-dark text-white text-center mt-5 py-3">
-    <p class="mb-0">© 2025 Panel de Usuario | Hecho con Bootstrap</p>
+  <!-- ⚡ FOOTER -->
+  <footer class="text-center mt-5">
+    <p class="mb-0">© 2025 — Leonel Corrales | Diseño NeoCeleste 💠</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
